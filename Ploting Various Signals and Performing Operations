@@ -1,0 +1,196 @@
+t=-10:0.01:10
+w=10
+a=sin(w*t)
+subplot(4,2,1)
+plot(t,a)
+xlabel('TIME')
+ylabel('AMPLITUDE')
+title('SINE FUNCTION')
+grid on
+b=cos(w*t)
+subplot(4,2,2)
+plot(t,b)
+xlabel('TIME')
+ylabel('AMPLITUDE')
+title('COS FUNCTION')
+grid on
+
+b=sinc(w*t)
+subplot(4,2,3)
+plot(t,b)
+xlabel('TIME')
+ylabel('AMPLITUDE')
+title('SINC FUNCTION')
+grid on
+
+c=1-abs(t)/w
+subplot(4,2,4)
+plot(t,c)
+xlabel('TIME')
+ylabel('AMPLITUDE')
+title('TRIANGULAR FUNCTION')
+grid on
+
+d=abs(t)<0.5
+subplot(4,2,5)
+plot(t,d)
+xlabel('TIME')
+ylabel('AMPLITUDE')
+title('RECTANGULAR FUNCTION')
+grid on
+
+e=w*t
+subplot(4,2,6)
+plot(t,e)
+xlabel('TIME')
+ylabel('AMPLITUDE')
+title('RAMP FUNCTION')
+grid on
+
+f=(t>=1)
+subplot(4,2,7)
+plot(t,f)
+xlabel('TIME')
+ylabel('AMPLITUDE')
+title('UNIT STEP FUNCTION')
+grid on
+
+k=-10:0.01:10
+g=k==0
+subplot(4,2,8)
+plot(k,g)
+xlabel('TIME')
+ylabel('AMPLITUDE')
+title('IMPULSE FUNCTION')
+grid on
+
+
+figure
+
+h=1*(t>=0)+(-1)*(t<0)
+subplot(2,2,1)
+plot(t,h)
+xlabel('TIME')
+ylabel('AMPLITUDE')
+title('SIGNUM FUNCTION')
+grid on
+
+j=(t).^2
+subplot(2,2,2)
+plot(t,j)
+xlabel('TIME')
+ylabel('AMPLITUDE')
+title('PARABOLIC FUNCTION')
+grid on
+
+k=exp(t)
+subplot(2,2,3)
+plot(t,k)
+xlabel('TIME')
+ylabel('AMPLITUDE')
+title('EXPONENTIAL FUNCTION')
+grid on
+
+%ADDITION
+%SUBTRACTION
+%TIME REVERSAL
+%SHIFTING SCALING
+
+figure
+c=1-abs(t)/w
+subplot(2,2,1)
+plot(t,c)
+xlabel('TIME')
+ylabel('AMPLITUDE')
+title('SIGNAL ONE')
+grid on
+
+d=abs(t)<0.5
+subplot(2,2,2)
+plot(t,d)
+xlabel('TIME')
+ylabel('AMPLITUDE')
+title('SIGNAL TWO')
+grid on
+
+
+o=c+d
+subplot(2,2,3)
+plot(t,o)
+xlabel('TIME')
+ylabel('AMPLITUDE')
+title('ADDITION OF TWO FUNCTION')
+grid on
+
+S=c-d
+subplot(2,2,4)
+plot(t,S)
+xlabel('TIME')
+ylabel('AMPLITUDE')
+title('SUBTRACTION OF TWO FUNCTION')
+grid on
+
+figure
+
+h=1*(t>=0)+(-1)*(t<0)
+subplot(5,1,1)
+plot(t,h)
+xlabel('TIME')
+ylabel('AMPLITUDE')
+title('GIVEN SIGNAL')
+grid on
+ylim([-1.8,1.8])
+
+u=1*((-t)>=0)+(-1)*((-t)<0)
+subplot(5,1,2)
+plot(t,u)
+xlabel('TIME')
+ylabel('AMPLITUDE')
+title('TIME REVERSED')
+grid on
+ylim([-1.8,1.8])
+
+m=1*(t+4>=0)+(-1)*(t+4<0)
+subplot(5,1,3)
+plot(t,m)
+xlabel('TIME')
+ylabel('AMPLITUDE')
+title('TIME SHIFTED SIGNUM FUNCTION')
+grid on
+ylim([-1.8,1.8])
+
+n=5+(1*(t>=0)+(-1)*(t<0))
+subplot(5,1,4)
+plot(t,n)
+xlabel('TIME')
+ylabel('AMPLITUDE')
+title('AMPLITUDE SHIFTED SIGNUM FUNCTION')
+grid on
+ylim([-7,7])
+
+v=5.*(1*(t>=0)+(-1)*(t<0))
+subplot(5,1,5)
+plot(t,v)
+xlabel('TIME')
+ylabel('AMPLITUDE')
+title('AMPLITUDE SCALED SIGNUM FUNCTION')
+grid on
+ylim([-7,7])
+
+figure
+d=abs(t)<0.5
+subplot(2,1,1)
+plot(t,d)
+xlabel('TIME')
+ylabel('AMPLITUDE')
+title('GIVEN SIGNAL')
+grid on
+
+
+d=abs(t.*4)<0.5
+subplot(2,1,2)
+plot(t,d)
+xlabel('TIME')
+ylabel('AMPLITUDE')
+title('TIME SCALED')
+grid on
